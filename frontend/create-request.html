@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So'rov yaratish</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4365/4365271.png" type="image/x-icon">
+
+</head>
+
+<body class="min-h-screen gradient-bg">
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="relative z-10 min-h-screen">
+        <nav class="glass-card border-b border-white/20 sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-3">
+                        <h1 class="text-xl font-bold text-white">
+                            Dern Support
+                        </h1>
+                    </div>
+
+                    <div class="hidden md:flex items-center space-x-1" id="navLinks">
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="hidden md:flex items-center space-x-3">
+                            <div class="text-right">
+                                <div id="userWelcome" class="text-sm font-medium text-white"></div>
+                                <div id="userRole" class="text-xs text-white/70"></div>
+                            </div>
+                        </div>
+                        <button onclick="logout()"
+                            class="bg-red-600/20 text-red-400 px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-600/30 transition-all">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Chiqish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mb-8">
+                <div class="glass-card rounded-2xl p-6">
+                    <h1 class="text-3xl font-bold text-white mb-2">Yangi Xizmat So'rovini Yaratish</h1>
+                    <p class="text-white/80">Uskunangiz uchun yangi ta'mirlash so'rovini yuboring</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8">
+                <form id="dashboardServiceRequestForm" class="space-y-6">
+                    <input type="hidden" id="fullName" name="fullName">
+                    <input type="hidden" id="email" name="email">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="dashboardDeviceModel" class="block text-sm font-medium text-white/90">Uskuna
+                                Modeli *</label>
+                            <input type="text" id="dashboardDeviceModel" name="device_model" required
+                                placeholder="masalan, iPhone 13, Samsung Galaxy S21"
+                                class="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="dashboardIssueType" class="block text-sm font-medium text-white/90">Muammo Turi
+                                *</label>
+                            <select id="dashboardIssueType" name="issue_type" required
+                                class="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all">
+                                <option value="">Muammo Turini Tanlang</option>
+                                <option value="hardware">Uskuna Muammosi</option>
+                                <option value="software">Dasturiy Muammo</option>
+                                <option value="other">Boshqa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="dashboardProblemArea" class="block text-sm font-medium text-white/90">Muammo
+                                Joyi</label>
+                            <input type="text" id="dashboardProblemArea" name="problem_area"
+                                placeholder="masalan, Ekran, Batareya, Zaryadlash porti"
+                                class="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="dashboardLocation" class="block text-sm font-medium text-white/90">Manzil
+                                *</label>
+                            <select id="dashboardLocation" name="location" required
+                                class="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all">
+                                <option value="">Manzil Tanlang</option>
+                                <option value="Sergili">Sergili</option>
+                                <option value="Yunusobod">Yunusobod</option>
+                                <option value="Shayxontohur">Shayxontohur</option>
+                                <option value="Olmazor">Olmazor</option>
+                                <option value="Uchtepa">Uchtepa</option>
+                                <option value="Yakkasaroy">Yakkasaroy</option>
+                                <option value="Yangihayot">Yangihayot</option>
+                                <option value="Mirobod">Mirobod</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="dashboardDescription" class="block text-sm font-medium text-white/90">Muammo Tavsifi
+                            *</label>
+                        <textarea id="dashboardDescription" name="description" rows="4" required
+                            placeholder="Muammoni batafsil tariflang..."
+                            class="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit"
+                            class="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-white/90 transition-all inline-flex items-center">
+                            <span id="submitText">So'rovni Yuborish</span>
+                            <i id="submitLoader" class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/create-request.js"></script>
+</body>
+
+</html>

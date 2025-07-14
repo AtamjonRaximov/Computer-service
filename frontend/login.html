@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFix Pro - Kirish</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4365/4365271.png" type="image/x-icon">
+
+</head>
+
+<body class="min-h-screen gradient-bg flex items-center justify-center p-4">
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="w-full max-w-md relative z-10">
+        <div class="glass-card rounded-3xl p-8 shadow-2xl slide-up">
+            <div class="text-center mb-8">
+                <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-circle text-white text-2xl"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-white mb-2">Xush kelibsiz!</h1>
+                <p class="text-white/80">Hisobingizga kirish uchun ma'lumotlaringizni kiriting</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+                <div class="space-y-2">
+                    <label for="email" class="block text-sm font-medium text-white/90">Elektron pochta</label>
+                    <div class="relative">
+                        <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60"></i>
+                        <input type="email" id="email" name="email" required
+                            class="w-full pl-12 pr-4 py-4 bg-black/20 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all"
+                            placeholder="sizning@email.com">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="password" class="block text-sm font-medium text-white/90">Parol</label>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60"></i>
+                        <input type="password" id="password" name="password" required
+                            class="w-full pl-12 pr-4 py-4 bg-black/20 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-white text-primary font-semibold py-4 rounded-2xl hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg">
+                    <span id="submitText">Kirish</span>
+                    <i id="submitLoader" class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                </button>
+            </form>
+
+            <div class="mt-4 text-white/50">
+                Hali hech qanday hisobingiz yo‘qmi?
+                <a href="register.html" class="text-white hover:text-white transition-colors text-sm">
+                    Hisob yaratish
+                </a>
+            </div>
+            <a href="index.html" class="text-white hover:text-white transition-colors text-sm">
+                Bosh sahifaga qaytish
+            </a>
+        </div>
+    </div>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/auth.js"></script>
+</body>
+
+</html>
